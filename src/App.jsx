@@ -1,9 +1,15 @@
+import { Routes, Route } from "react-router"
 
-
-import { CopyrightSection } from "./components/CopyrightSection/CopyrightSection"
+import { Layout } from "./Layout/Layout"
+import { CopyrightSection } from "./components"
+import { Login } from "./pages/Login/Login"
 
 export function App() {
   return <>
-    <CopyrightSection></CopyrightSection>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route element={<Layout />}>
+      </Route>
+    </Routes>
   </>
 }
