@@ -1,15 +1,16 @@
 import { Routes, Route } from "react-router"
 
 import { Layout } from "./Layout/Layout"
-import { CopyrightSection } from "./components"
-import { Login } from "./pages/Login/Login"
+import { Login, Banners, NotFound } from "./pages"
 
 export function App() {
   return <>
     <Routes>
-      <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
       <Route element={<Layout />}>
+        <Route path='/' element={<Banners />} />
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   </>
 }
