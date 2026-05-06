@@ -1,1 +1,5 @@
 export * from "./CopyrightSection/CopyrightSection"
+export * from "./FileUpload/FileUpload"
+export * from "./PriveRoute/PriveRoute"
+export * from "./Header/Header"
+export * from "./Menu/Menu"
