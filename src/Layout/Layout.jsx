@@ -1,13 +1,14 @@
 import { Outlet } from "react-router"
-import { CopyrightSection } from "../components/CopyrightSection/CopyrightSection"
+import { Menu, Header, CopyrightSection } from "../components"
 
 export function Layout() {
     return <>
-        <Outlet />
-        <CopyrightSection />
+        <Menu />
+        <section className="pages-wrap w-full max-w-full h-full flex flex-col">
+            <Header />
+            <Outlet />
+            <CopyrightSection />
+        </section>
     </>
 }
 
-
-// <section className="pages-wrap w-full max-w-full min-h-full flex flex-col gap-[52px]">
-// </section>
