@@ -4,7 +4,8 @@ import 'react-toastify/dist/ReactToastify.css'
 
 import { Layout } from "./Layout/Layout"
 import { PriveRoute } from "./components"
-import { Login, Banners, Notifications, NotFound } from "./pages"
+import { Login, Home, Notifications, NotificationAdd, NotFound } from "./pages"
+import { Banners, BannerView, BannerAdd, BannerEdit } from './pages/Banners'
 
 export function App() {
   return <>
@@ -12,8 +13,13 @@ export function App() {
     <Routes>
       <Route element={<PriveRoute />}>
         <Route element={<Layout />}>
-          <Route path='/' element={<Banners />} />
+          <Route path="/" element={<Home />} />
+          <Route path='/banners' element={<Banners />} />
+          <Route path='/banners/view/:id' element={<BannerView />} />
+          <Route path='/banners/add' element={<BannerAdd />} />
+          <Route path='/banners/edit/:id' element={<BannerEdit />} />
           <Route path="/notifications" element={<Notifications />} />
+          <Route path="/notifications/add" element={<NotificationAdd />} />
         </Route>
       </Route>
       <Route path="/login" element={<Login />} />

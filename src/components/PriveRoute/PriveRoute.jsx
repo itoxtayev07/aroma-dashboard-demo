@@ -1,24 +1,6 @@
-import { useState, useEffect } from "react"
-import { Navigate, Outlet, useNavigate } from "react-router"
+import { Navigate, Outlet } from "react-router"
 
 export function PriveRoute() {
-    const [isOk, setIsOk] = useState(false)
-    let token = localStorage.getItem('token')
-    let navigate = useNavigate()
-
-    function checkAuth() {
-        if (token) {
-            setIsOk(true)
-            navigate('/')
-        } else {
-            setIsOk(false)
-            navigate('/login')
-        }
-    }
-
-    useEffect(() => {
-        checkAuth()
-    }, [])
-
-    return isOk ? <Outlet /> : <Navigate to='/login' />
+    const token = localStorage.getItem('token')
+    return token ? <Outlet /> : <Navigate to='/login' />
 }

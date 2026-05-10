@@ -39,16 +39,14 @@ export function Login() {
 
             navigate('/')
 
-            toast.success("Parol muvaffaqiyatli o'zgartirildi!", {
+            toast.success("Tizimga muvaffaqiyatli kirdingiz!", {
                 style: {
                     width: '425px',
                 }
             })
 
         } catch (err) {
-            setLoginError("Login yoki parol noto'g'ri")
-            setPasswordError("Login yoki parol noto'g'ri")
-            toast.error("Ma'lumotlar noto'g'ri kiritildi!", {
+            toast.error("Tarmoq xatosi. Iltimos, internetga ulanishingizni tekshiring.", {
                 style: {
                     width: '425px',
                 }
@@ -114,7 +112,3 @@ export function Login() {
         </section>
     </main>
 }
-
-// #8091A7
-
-// https://documenter.getpostman.com/view/23417898/2sAXqtaMEP#7510b2f6-3ae5-4f60-8b62-c7c41c7bca25
