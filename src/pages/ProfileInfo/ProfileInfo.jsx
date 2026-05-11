@@ -16,7 +16,7 @@ export const ProfileInfo = memo(function ProfileInfo() {
       setUserData(user.data.data)
     } catch (err) {
       console.log(err.user?.data)
-      // navigate('/login')
+      navigate('/login')
       toast.error("Tarmoq xatosi. Iltimos, internetga ulanishingizni tekshiring.", {
         style: {
           width: '425px',
@@ -32,7 +32,7 @@ export const ProfileInfo = memo(function ProfileInfo() {
   function formatDate(dateStr) {
     if (!dateStr) return '—'
     const date = new Date(dateStr)
-    const pad = (n) => String(n).padStart(2, '0')
+    const pad = (num) => String(num).padStart(2, '0')
     return `${pad(date.getDate())}.${pad(date.getMonth() + 1)}.${date.getFullYear()} ${pad(date.getHours())}:${pad(date.getMinutes())}`
   }
 

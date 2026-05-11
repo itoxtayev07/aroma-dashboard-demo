@@ -47,7 +47,7 @@ export const BannerView = memo(function BannerView() {
     function formatDate(dateStr) {
         if (!dateStr) return '—'
         const date = new Date(dateStr)
-        const pad = (n) => String(n).padStart(2, '0')
+        const pad = (num) => String(num).padStart(2, '0')
         return `${pad(date.getDate())}.${pad(date.getMonth() + 1)}.${date.getFullYear()} ${pad(date.getHours())}:${pad(date.getMinutes())}`
     }
 
@@ -162,9 +162,9 @@ export const BannerView = memo(function BannerView() {
                             <div className={labelsStyle}>Filial</div>
                             <div className={`${valuesStyle} flex flex-wrap gap-[6px]`}>
                                 {banner?.branches?.length > 0
-                                    ? banner.branches.map(b => (
-                                        <span key={b.id} className="p-[7px_8px] bg-[#F5F6FA] rounded-[4px] text-[#526484] text-[12px] leading-[100%] tracking-normal">
-                                            {b.name}
+                                    ? banner.branches.map(branch => (
+                                        <span key={branch.id} className="p-[7px_8px] bg-[#F5F6FA] rounded-[4px] text-[#526484] text-[12px] leading-[100%] tracking-normal">
+                                            {branch.name}
                                         </span>
                                     ))
                                     : '—'

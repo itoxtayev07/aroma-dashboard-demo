@@ -74,16 +74,16 @@ export const BannerEdit = memo(function BannerEdit() {
         getBanner()
     }, [id])
 
-    const removeBranch = (branchId) => setForm(prev => ({ ...prev, branches: prev.branches.filter(b => b.id !== branchId) }))
+    const removeBranch = (branchId) => setForm(prev => ({ ...prev, branches: prev.branches.filter(branch => branch.id !== branchId) }))
     const addBranch = (branch) => {
-        if (form.branches.find(b => b.id === branch.id)) return
+        if (form.branches.find(brnch => brnch.id === branch.id)) return
         setForm(prev => ({ ...prev, branches: [...prev.branches, branch] }))
         setBranchDropdown(false)
         setBranchSearch('')
     }
-    const filteredBranches = allBranches.filter(b =>
-        b.name?.toLowerCase().includes(branchSearch.toLowerCase()) &&
-        !form.branches.find(fb => fb.id === b.id)
+    const filteredBranches = allBranches.filter(branch =>
+        branch.name?.toLowerCase().includes(branchSearch.toLowerCase()) &&
+        !form.branches.find(fornBranch => fornBranch.id === branch.id)
     )
 
     const handleSubmit = async () => {
@@ -104,7 +104,7 @@ export const BannerEdit = memo(function BannerEdit() {
                 type: Number(form.type),
                 path: form.path || '',
                 duration: Number(form.duration) || 0,
-                branches: form.branches.map(b => b.id),
+                branches: form.branches.map(branch => branch.id),
                 translations: {
                     uz: { name: form.name_uz, description: form.description_uz || '', image: imageUrl },
                     ru: { name: form.name_ru || form.name_uz, description: form.description_ru || '', image: imageUrl },
@@ -273,11 +273,11 @@ export const BannerEdit = memo(function BannerEdit() {
 
                                 {branchDropdown && filteredBranches.length > 0 && (
                                     <div className="absolute top-full left-0 right-0 z-50 mt-[4px] bg-white border border-[#DBDFEA] rounded-[4px] shadow-[0_4px_16px_#00000014] max-h-[200px] overflow-y-auto">
-                                        {filteredBranches.map(b => (
+                                        {filteredBranches.map(branch => (
                                             <button
-                                                key={b.id}
+                                                key={branch.id}
                                                 className="w-full text-left px-[14px] py-[10px] text-[13px] text-[#364A63] hover:bg-[#f5f6fa] duration-[.2s]"
-                                                onClick={() => addBranch(b)}>{b.name}</button>
+                                                onClick={() => addBranch(branch)}>{branch.name}</button>
                                         ))}
                                     </div>
                                 )}

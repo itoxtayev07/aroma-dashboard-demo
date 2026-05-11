@@ -135,8 +135,8 @@ export const FileUpload = memo(function FileUpload({ value, onChange, fieldW = 1
                         <div className="p-[16px] bg-[#F5F6FA] flex items-center justify-center max-h-[360px] overflow-auto">
                             <ReactCrop
                                 crop={crop}
-                                onChange={(c) => setCrop(c)}
-                                onComplete={(c) => setCompletedCrop(c)}
+                                onChange={(crp) => setCrop(crp)}
+                                onComplete={(crp) => setCompletedCrop(crp)}
                                 aspect={(fieldW || 16) / (fieldH || 6)}
                                 minWidth={474}>
                                 <img
