@@ -170,11 +170,11 @@ export const BannerEdit = memo(function BannerEdit() {
         <main className="w-full max-w-full p-[32px] flex-1">
             <header className="flex items-start justify-between">
                 <div>
-                    <h1 className="text-[#364A63] text-[28px] font-bold leading-[110%] tracking-[-0.84px]">Banner qo’shish</h1>
+                    <h1 className="text-[#364A63] text-[28px] font-bold leading-[110%] tracking-[-0.84px]">Banner o’zgartirish</h1>
                     <div className="flex items-center gap-[8px] mt-[8px]">
                         <Link to="/banners" className="text-[#526484] text-[11px] font-medium tracking-[0.8px] uppercase hover:text-[#B79F7C] duration-[.2s]">Bannerlar menyusi</Link>
                         <span className="text-[#526484] text-[11px] select-none">/</span>
-                        <span className="text-[#B7C2D0] text-[11px] font-medium tracking-[0.8px] uppercase select-none">Banner qo’shish</span>
+                        <span className="text-[#B7C2D0] text-[11px] font-medium tracking-[0.8px] uppercase select-none">O’zgartirish</span>
                     </div>
                 </div>
                 <button
