@@ -57,12 +57,12 @@ export function Login() {
     }
 
     return <main className="login-main w-full max-w-full h-full flex flex-col items-center">
-        <section className="login-sect w-full max-w-[480px] mt-auto mb-auto p-[20px_24px] flex flex-col items-center gap-[24px]">
+        <section className="login-sect w-full max-w-full m-auto p-[20px_24px] flex flex-col items-center gap-[24px]">
             <div className="logo-card">
                 <img src={logo} alt="Aroma" />
             </div>
 
-            <form className='register-card w-full max-w-full p-[40px] flex flex-col gap-[20px] rounded-[4px] border-[1px] border-[#DBDFEA] bg-[#FFF]'>
+            <form className='register-card w-full max-w-[480px] p-[40px] flex flex-col gap-[20px] rounded-[4px] border-[1px] border-[#DBDFEA] bg-[#FFF]'>
                 <div className="register-title">
                     <h4 className='font-bold text-[24px] leading-[26px] tracking-[-0.48px] text-[#364A63]'>Kirish</h4>
                     <p className='mt-[8px] text-[14px] leading-[165%] tracking-normal text-[#526484]'>Tizimga faqat Aroma xodimlari kirishi mumkin</p>

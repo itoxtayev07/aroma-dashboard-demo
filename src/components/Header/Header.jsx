@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { api } from '../../config/axios'
 import { toast } from 'react-toastify'
-
+import { Link } from 'react-router'
 import { createPortal } from 'react-dom'
 
 import userImg from '../../assets/user.svg'
@@ -12,19 +12,19 @@ import eyeOff from '../../assets/eye-off.svg'
 
 export function Header() {
     const [open, setOpen] = useState(false)
-    const [userData, setUserDara] = useState()
+    const [userData, setUserData] = useState()
     const [openModal, setOpenModal] = useState(false)
-
+    
     const [oldPassword, setOldPassword] = useState('')
     const [oldPasswordError, setOldPasswordError] = useState('')
     const [oldPasswordEr, setOldPasswordEr] = useState(false)
     const [isOldPassword, setIsOldPassword] = useState(true)
-
+    
     const [password, setPassword] = useState('')
     const [passwordError, setPasswordError] = useState('')
     const [passwordEr, setPasswordEr] = useState(false)
     const [isPassword, setIsPassword] = useState(true)
-
+    
     const [rePassword, setRePassword] = useState('')
     const [rePasswordError, setRePasswordError] = useState('')
     const [rePasswordEr, setRePasswordEr] = useState(false)
@@ -34,7 +34,7 @@ export function Header() {
     const getUser = async () => {
         try {
             const user = await api.get('/admin/profile/info')
-            setUserDara(user.data.data)
+            setUserData(user.data.data)
         } catch (err) {
             console.log("Error:", err.user?.data)
             toast.error("Tarmoq xatosi. Iltimos, internetga ulanishingizni tekshiring.", {
@@ -59,7 +59,7 @@ export function Header() {
                 }
             })
         } catch (err) {
-            console.log("Error data:", err.response?.data)
+            console.log(err.response?.data)
             toast.error("Ma'lumotlar noto'g'ri kiritildi!", {
                 style: {
                     width: '425px',
@@ -70,7 +70,7 @@ export function Header() {
 
     useEffect(() => {
         getUser()
-    }, [])
+    }, [])    
 
     useEffect(() => {
         function handleClickOutside(e) {
@@ -89,6 +89,8 @@ export function Header() {
                     <div className="min-w-[32px] h-[32px] flex justify-center items-center rounded-[50%] bg-[#B79F7C]">
                         <img src={userImg} alt="User" />
                     </div>
+
+
                     <div className='flex flex-col'>
                         <strong className="text-[#B79F7C] text-[11px] font-medium leading-[11px] tracking-[-1%] text-start">{userData?.role || 'Role'}</strong>
                         <div className="select mt-[3px]">
@@ -114,9 +116,12 @@ export function Header() {
                         </div>
 
                         <div className='border-t border-b border-[#DBDFEA]'>
-                            <button className="w-full max-w-full flex items-center gap-[12px] px-[20px] py-[16px] hover:bg-[#f5f6fa] duration-[.2s]">
-                                <strong className='text-[#526484] text-[12px] font-medium leading-[165%] tracking-0'>Profil ma'lumot</strong>
-                            </button>
+                            <Link to='/profile-info'>
+                                <button className="w-full max-w-full flex items-center gap-[12px] px-[20px] py-[16px] hover:bg-[#f5f6fa] duration-[.2s]">
+                                    <strong className='text-[#526484] text-[12px] font-medium leading-[165%] tracking-0'>Profil ma'lumot</strong>
+                                </button>
+                            </Link>
+
                             <button className="w-full max-w-full flex items-center gap-[12px] px-[20px] py-[16px] hover:bg-[#f5f6fa] duration-[.2s]"
                                 onClick={() => setOpenModal(true)}>
                                 <strong className='text-[#526484] text-[12px] font-medium leading-[165%] tracking-0'>Parol o'zgartirish</strong>
