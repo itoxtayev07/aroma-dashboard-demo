@@ -104,9 +104,7 @@ export const BannerView = memo(function BannerView() {
                         </div>
                     </div>
 
-                    {/* Table */}
                     <ul className="mt-[20px] border border-[#DBDFEA] rounded-[4px]">
-                        {/* ID */}
                         <li className={tablesStyle}>
                             <div className={labelsStyle}>ID</div>
                             <div className={`${valuesStyle} flex items-center gap-[8px]`}>
@@ -114,31 +112,26 @@ export const BannerView = memo(function BannerView() {
                             </div>
                         </li>
 
-                        {/* Nomi */}
                         <li className={tablesStyle}>
                             <div className={labelsStyle}>Nomi</div>
                             <div className={valuesStyle}>{banner?.name || '—'}</div>
                         </li>
 
-                        {/* Ma'lumoti */}
                         <li className={tablesStyle}>
                             <div className={labelsStyle}>Ma'lumoti</div>
                             <div className={valuesStyle}>{banner?.description || '—'}</div>
                         </li>
 
-                        {/* Turi */}
                         <li className={tablesStyle}>
                             <div className={labelsStyle}>Turi</div>
                             <div className={valuesStyle}>{typeLabels[banner?.type] || banner?.type || '—'}</div>
                         </li>
 
-                        {/* Davomiyligi */}
                         <li className={tablesStyle}>
                             <div className={labelsStyle}>Davomiyligi</div>
                             <div className={valuesStyle}>{banner?.duration ? `${banner.duration} soniya` : '—'}</div>
                         </li>
 
-                        {/* Banner holati */}
                         <li className={tablesStyle}>
                             <div className={labelsStyle}>Banner holati</div>
                             <div className={`${valuesStyle} flex items-center gap-[7px]`}>
@@ -160,13 +153,11 @@ export const BannerView = memo(function BannerView() {
                             </div>
                         </li>
 
-                        {/* Path */}
                         <li className={tablesStyle}>
                             <div className={labelsStyle}>Path</div>
                             <div className={valuesStyle}>{banner?.path || '—'}</div>
                         </li>
 
-                        {/* Filial */}
                         <li className={tablesStyle}>
                             <div className={labelsStyle}>Filial</div>
                             <div className={`${valuesStyle} flex flex-wrap gap-[6px]`}>
@@ -181,13 +172,11 @@ export const BannerView = memo(function BannerView() {
                             </div>
                         </li>
 
-                        {/* Yaratilgan vaqti */}
                         <li className={tablesStyle}>
                             <div className={labelsStyle}>Yaratilgan vaqti</div>
                             <div className={valuesStyle}>{formatDate(banner?.created_at)}</div>
                         </li>
 
-                        {/* O'zgartirish kiritilgan vaqti */}
                         <li className={tablesStyle}>
                             <div className={labelsStyle}>O'zgartirish kiritilgan vaqti</div>
                             <div className={valuesStyle}>{formatDate(banner?.updated_at)}</div>
