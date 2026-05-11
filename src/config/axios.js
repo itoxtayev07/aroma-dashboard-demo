@@ -3,7 +3,7 @@ import axios from "axios";
 const isDev = import.meta.env.DEV || import.meta.env.MODE === "production";
 
 export const api = axios.create({
-    baseURL: isDev ? "/api" : "https://api.aroma.localhost.uz",
+    baseURL: "https://api.aroma.localhost.uz",
     timeout: 10000,
 })
 
