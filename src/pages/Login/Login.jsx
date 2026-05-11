@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, memo } from 'react'
 import { useNavigate } from "react-router"
 import { toast } from 'react-toastify'
 
@@ -8,9 +8,9 @@ import eyeOn from '../../assets/eye-on.svg'
 import eyeOff from '../../assets/eye-off.svg'
 import whiteRollingLoading from '../../assets/loading-white-rolling.svg'
 
-export function Login() {
+export const Login = memo(function Login() {
 
-    const [isPassword, setIsPassword] = useState(true)
+    const [isPassword, setIsPassword] = useState(false)
     const [loading, setLoading] = useState(false)
     const [loginError, setLoginError] = useState('')
     const [passwordError, setPasswordError] = useState('')
@@ -111,4 +111,4 @@ export function Login() {
             <p className="login-copyright-text text-[14px] leading-[165%] tracking-normal text-[#8091A7] text-center">© 2024 Aroma. All Rights Reserved.</p>
         </section>
     </main>
-}
+})

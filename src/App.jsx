@@ -23,6 +23,7 @@ export function App() {
   return <>
     <ToastContainer />
     <Routes>
+      <Route path="/login" element={<Login />} />
       <Route element={<PriveRoute />}>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
@@ -37,7 +38,6 @@ export function App() {
           <Route path="/notifications/view" element={<NotificationView />} />
         </Route>
       </Route>
-      <Route path="/login" element={<Login />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </>
